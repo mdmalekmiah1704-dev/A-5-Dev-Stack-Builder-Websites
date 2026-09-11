@@ -28,7 +28,7 @@ function App() {
         const data: Technology[] = await response.json();
 
         setTechnologies(data);
-      } catch (error) {
+      }catch{
         toast.error("Failed to load technologies!");
       } finally {
         setLoading(false);
