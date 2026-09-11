@@ -1,75 +1,50 @@
-# React + TypeScript + Vite
+Dev Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Description
 
-Currently, two official plugins are available:
+Dev Stack is a responsive web application where users can explore different technologies and build their own technology stack.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Technologies Used
 
-## React Compiler
+* React.js
+* TypeScript
+* Vite
+* CSS
+* JSON
+* React-Toastify
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Features
 
-## Expanding the ESLint configuration
+1. Explore different technologies with their details.
+2. Add technologies to your own stack and prevent duplicates.
+3. Remove technologies from the stack with toast notifications.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+React Questions
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. What is JSX, and why is it used in React?
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+JSX is a syntax that allows us to write HTML-like code inside JavaScript. It is used in React to make UI code easier to write and understand.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. What is the difference between props and state?
 
-```
+Props are used to pass data from a parent component to a child component. State is data managed inside a component that can change over time.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+3. What does the useState hook do, and where did you use it in this project?
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+useState is used to manage changing data in a React component. In this project, it is used to manage the technology list, selected stack, and loading state.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4. What does the useEffect hook do, and why did you need it to load the JSON data?
 
-```
+useEffect is used to perform side effects in React. In this project, it is used to load the technology data from the JSON file when the application starts.
+
+5. Why does every item in a .map() list need a unique key prop?
+
+A unique key helps React identify each item in a list and efficiently update the UI when the list changes.
+
+6. What is conditional rendering? Show one place you used it.
+
+Conditional rendering means showing different UI based on a condition. In this project, an empty stack message is shown when no technology has been selected.
+
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+A parent component passes data or functions to a child through props. The child can communicate back by calling a function received through props.
