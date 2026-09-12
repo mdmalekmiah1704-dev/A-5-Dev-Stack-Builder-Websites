@@ -1,7 +1,4 @@
-import React from 'react';
-
-import bannerStackImg from '../assets/banner-stack.png'; 
-
+import bannerStacking from '../assets/banner-stack.png';
 function Hero() {
   return (
     <section className="hero" id="home">
@@ -31,7 +28,7 @@ function Hero() {
         </div>
         <div className="hero-image">
           <div className="illustration-box">
-          <img src="src/assets/banner-stack.png" alt="3D Illustration" />
+          <img src={bannerStacking} alt="3D Illustration" />
           </div>
         </div>
 
